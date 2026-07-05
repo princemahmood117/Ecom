@@ -51,7 +51,10 @@ const app = express();
 
 // app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
 
-const allowedOrigins = process.env.CLIENT_URLS.split(',');
+// const allowedOrigins = process.env.CLIENT_URLS.split(',');
+
+const allowedOrigins = process.env.CLIENT_URLS?.split(',') || [];
+
 
 app.use(
   cors({
